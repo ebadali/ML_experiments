@@ -1,0 +1,33 @@
+import tensorflow as tf
+
+s = tf.constant([[1.,2.]])
+print(type(s))
+print(s)
+
+
+print('500*500 tensor equaling 0.5')
+
+res = tf.ones(shape=[500,500])*0.5
+# res= tf.constant([[500,500]])
+print(res[1])
+
+print('normal distribution')
+
+X = tf.ones(shape=[100,100])
+e = tf.exp(-0.5*tf.pow(X,2))
+res1 = tf.truediv(e,tf.sqrt(2*3.142))
+# print(res1.eval())
+
+res1= tf.negative(tf.ones([5,5]))
+with tf.Session() as sess:
+	result = sess.run(res1)
+print(result)
+
+
+
+# sess = tf.InteractiveSession()
+# res1= tf.negative(tf.ones([5,5]))
+# print(res1.eval())
+# sess.close()
+
+
